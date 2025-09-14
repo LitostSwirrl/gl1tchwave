@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL1TCHWAVE - Simple Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <header class="header">
+            <h1>GL1TCHWAVE_</h1>
+            <nav>
+                <button id="help-btn" class="nav-btn">HELP</button>
+                <button id="about-btn" class="nav-btn">ABOUT</button>
+            </nav>
+        </header>
+
+        <!-- Welcome Overlay -->
+        <div id="welcome-overlay" class="overlay">
+            <div class="welcome-content">
+                <h2>WELCOME TO GL1TCHWAVE_</h2>
+                <p>Create stunning visual art without coding!</p>
+                
+                <div class="instructions">
+                    <div class="instruction-item">
+                        <span class="step">1</span>
+                        <div>
+                            <h4>CHOOSE A VISUAL PRESET</h4>
+                            <p>Click any button in the "VISUAL PRESETS" section to start</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <span class="step">2</span>
+                        <div>
+                            <h4>ADJUST LIVE CONTROLS</h4>
+                            <p>Move the sliders to change frequency, speed, intensity, and scale in real-time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <span class="step">3</span>
+                        <div>
+                            <h4>EXPERIMENT & EXPLORE</h4>
+                            <p>• Click canvas to pause/play<br>
+                               • Hit "RANDOMIZE" for surprises<br>
+                               • Try "FULLSCREEN" for immersion<br>
+                               • "AUDIO REACTIVE" responds to sound!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="start-btn" class="start-button">START CREATING_</button>
+            </div>
+        </div>
+
+        <main class="canvas-container">
+            <canvas id="gl-canvas"></canvas>
+        </main>
+
+        <aside class="controls-panel">
+            <!-- Visual Presets Gallery -->
+            <div class="presets-section">
+                <h3>VISUAL PRESETS_</h3>
+                <div class="presets-grid">
+                    <button class="preset-btn active" data-preset="oscillator">OSCILLATOR</button>
+                    <button class="preset-btn" data-preset="noise">NOISE FIELD</button>
+                    <button class="preset-btn" data-preset="webcam">WEBCAM</button>
+                    <button class="preset-btn" data-preset="audio">AUDIO REACTIVE</button>
+                    <button class="preset-btn" data-preset="kaleidoscope">KALEIDOSCOPE</button>
+                    <button class="preset-btn" data-preset="fractal">FRACTAL</button>
+                </div>
+            </div>
+
+            <!-- Parameter Controls -->
+            <div class="params-section">
+                <h3>LIVE CONTROLS_</h3>
+                <div class="param-group">
+                    <label>FREQUENCY</label>
+                    <input type="range" id="freq-slider" min="1" max="100" value="20" step="0.1">
+                    <span id="freq-value">20</span>
+                </div>
+                <div class="param-group">
+                    <label>SPEED</label>
+                    <input type="range" id="speed-slider" min="0" max="2" value="0.1" step="0.01">
+                    <span id="speed-value">0.1</span>
+                </div>
+                <div class="param-group">
+                    <label>INTENSITY</label>
+                    <input type="range" id="intensity-slider" min="0" max="2" value="1" step="0.01">
+                    <span id="intensity-value">1.0</span>
+                </div>
+                <div class="param-group">
+                    <label>SCALE</label>
+                    <input type="range" id="scale-slider" min="0.1" max="5" value="1" step="0.1">
+                    <span id="scale-value">1.0</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions-section">
+                <button id="randomize-btn" class="action-btn">RANDOMIZE</button>
+                <button id="fullscreen-btn" class="action-btn">FULLSCREEN</button>
+            </div>
+        </aside>
+
+        <footer class="footer">
+            <div id="status-bar">STATUS: READY_</div>
+            <div class="controls"></div>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/regl@2.1.0/dist/regl.min.js"></script>
+    <script src="simple.js"></script>
+
+</body>
+</html>
