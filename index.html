@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GL1TCHWAVE - Simple Version</title>
+    <title>GL1TCHWAVE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/x-icon;base64," type="image/x-icon">
 </head>
 <body>
 
@@ -66,7 +67,7 @@
             <div class="presets-section">
                 <h3>VISUAL PRESETS_</h3>
                 <div class="presets-grid">
-                    <button class="preset-btn active" data-preset="oscillator">OSCILLATOR</button>
+                    <button class="preset-btn" data-preset="oscillator">OSCILLATOR</button>
                     <button class="preset-btn" data-preset="noise">NOISE FIELD</button>
                     <button class="preset-btn" data-preset="webcam">WEBCAM</button>
                     <button class="preset-btn" data-preset="audio">AUDIO REACTIVE</button>
@@ -104,25 +105,28 @@
             <div class="actions-section">
                 <button id="randomize-btn" class="action-btn">RANDOMIZE</button>
                 <button id="fullscreen-btn" class="action-btn">FULLSCREEN</button>
+                <button id="toggle-code-btn" class="action-btn">SHOW CODE</button>
+            </div>
+
+            <!-- Code Editor (Initially Hidden) -->
+            <div id="code-editor-container" class="code-section hidden">
+                <h3>CODE EDITOR_</h3>
+                <div id="code-editor"></div>
             </div>
         </aside>
 
         <footer class="footer">
-            <div id="status-bar">STATUS: READY_</div>
-            <div class="controls"></div>
+            <div id="status-bar">STATUS: OK_</div>
+            <div class="controls">
+                <button id="run-btn">EXECUTE</button>
+                <button id="share-btn">SHARE</button>
+            </div>
         </footer>
 
     </div>
 
     <script src="https://unpkg.com/regl@2.1.0/dist/regl.min.js"></script>
-    <script>
-        // Ensure regl loads before our script
-        if (typeof createREGL === 'undefined') {
-            console.error('Regl failed to load, loading backup...');
-            document.write('<script src="https://cdn.jsdelivr.net/npm/regl@2.1.0/dist/regl.min.js"><\/script>');
-        }
-    </script>
-    <script src="simple.js"></script>
+    <script src="main.js" type="module"></script>
 
 </body>
 </html>
